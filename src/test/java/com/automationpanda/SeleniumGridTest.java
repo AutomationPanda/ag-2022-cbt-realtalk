@@ -4,20 +4,22 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.URL;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class LocalMachineTest {
+public class SeleniumGridTest {
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -25,27 +27,26 @@ public class LocalMachineTest {
     @BeforeEach
     public void startWebDriver() throws Exception {
 
+        Capabilities options;
+
         String browserName = System.getenv().getOrDefault("BROWSER", "chrome");
+        String gridUrl = System.getenv().get("GRID_URL");
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
+            options = new ChromeOptions().setHeadless(true).addArguments("no-sandbox");
         }
         else if (browserName.equalsIgnoreCase("firefox")) {
-            driver = new FirefoxDriver();
-        }
-        else if (browserName.equalsIgnoreCase("safari")) {
-            driver = new SafariDriver();
-        }
-        else if (browserName.equalsIgnoreCase("edge")) {
-            String edgeDriverPath = System.getenv().get("EDGE_DRIVER_PATH");
-            System.setProperty("webdriver.edge.driver", edgeDriverPath);
-            driver = new EdgeDriver();
+            options = new FirefoxOptions().setHeadless(true);
         }
         else {
             throw new Exception("Unsupported browser type: " + browserName);
         }
 
+        URL url = new URL(gridUrl);
+        driver = new RemoteWebDriver(url, options);
         wait = new WebDriverWait(driver, 15);
+
+        driver.manage().window().setSize(new Dimension(1280, 1024));
     }
 
     @AfterEach
