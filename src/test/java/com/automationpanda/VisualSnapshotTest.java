@@ -55,6 +55,9 @@ public class VisualSnapshotTest {
         // Add mobile emulation devices in Portrait mode
         config.addDeviceEmulation(DeviceName.iPhone_X, ScreenOrientation.PORTRAIT);
         config.addDeviceEmulation(DeviceName.Pixel_2, ScreenOrientation.PORTRAIT);
+        config.addDeviceEmulation(DeviceName.Galaxy_S5, ScreenOrientation.PORTRAIT);
+        config.addDeviceEmulation(DeviceName.Nexus_10, ScreenOrientation.PORTRAIT);
+        config.addDeviceEmulation(DeviceName.iPad_Pro, ScreenOrientation.LANDSCAPE);
 
         // Set the configuration object to Eyes
         eyes.setConfiguration(config);
