@@ -77,7 +77,7 @@ public class VisualSnapshotTest {
             eyes.open(
                     driver,
                     "Applitools Demo App",
-                    "Login",
+                    "VisualSnapshotTest",
                     new RectangleSize(800, 600));
 
             // Run the test steps, but with visual checks
