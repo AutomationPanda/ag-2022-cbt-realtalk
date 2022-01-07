@@ -1,0 +1,12 @@
+[node]
+detect-drivers = true
+drivers = ["chrome", "firefox"]
+heartbeat-period = 30
+hub = "http://<hub-ip-address>:4444"
+max-sessions = 1
+override-max-sessions = false
+port = 5555
+register-cycle = 10
+register-period = 120
+session-timeout = 300
+status-endpoint = "/status"

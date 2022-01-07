@@ -1,0 +1,6 @@
+[server]
+max-threads = 4
+port = 4444
+session-request-timeout = 180
+session-retry-interval = 5
+healthcheck-interval = 60
