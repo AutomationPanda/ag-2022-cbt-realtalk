@@ -19,8 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CloudPlatformTest {
 
-    private final static String GRID_URL = "@hub.lambdatest.com/wd/hub";
-
     private WebDriver driver;
     private WebDriverWait wait;
     public String status;
@@ -31,6 +29,7 @@ public class CloudPlatformTest {
 
         String username = System.getenv("LT_USERNAME");
         String accessKey = System.getenv("LT_ACCESS_KEY");
+        String gridUrl = System.getenv().getOrDefault("GRID_URL", "hub.lambdatest.com/wd/hub");
         String browserName = System.getenv().getOrDefault("BROWSER_NAME", "Chrome");
         String version = System.getenv().getOrDefault("VERSION", "96.0");
         String platform = System.getenv().getOrDefault("PLATFORM", "Windows 10");
@@ -48,7 +47,7 @@ public class CloudPlatformTest {
         capabilities.setCapability("video", true); // To enable video recording
         capabilities.setCapability("console", true); // To capture console logs
 
-        URL url = new URL("https://" + username + ":" + accessKey + GRID_URL);
+        URL url = new URL("https://" + username + ":" + accessKey + "@" + gridUrl);
         driver = new RemoteWebDriver(url, capabilities);
         wait = new WebDriverWait(driver, 15);
     }
