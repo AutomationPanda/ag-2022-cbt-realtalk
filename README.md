@@ -51,7 +51,7 @@ You can also run tests using `mvn test`
 (including [single tests](https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.html)).
 
 
-### Using a local machine
+### 1. Using a local machine
 
 Test class: `LocalMachineTest`
 
@@ -67,7 +67,7 @@ Environment variables:
 * `EDGE_DRIVER_PATH`: the absolute path to EdgeDriver
 
 
-### Using Selenium Grid
+### 2. Using Selenium Grid
 
 Test class: `SeleniumGridTest`
 
@@ -88,7 +88,7 @@ Environment variables:
 * `GRID_URL`: the URL for the Selenium Grid instance
 
 
-### Using a cloud testing platform
+### 3. Using a cloud testing platform
 
 Test class: `CloudPlatformTest`
 
@@ -108,7 +108,7 @@ Environment variables:
 * `RESOLUTION`: (optional) the viewport size
 
 
-### Using visual testing
+### 4. Using visual testing
 
 Test class: `VisualSnapshotTest`
 
