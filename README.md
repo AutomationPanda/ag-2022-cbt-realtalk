@@ -44,7 +44,11 @@ It is recommended to use an IDE like [IntelliJ IDEA](https://www.jetbrains.com/i
 All tests are located under `src/test/java/com/automationpanda/`.
 They are written using the [JUnit 5](https://junit.org/junit5/) framework.
 There are 4 test case classes, one for each cross-browser testing method:
-Each test has unique setup needs and environment variables.
+Each test has unique setup needs and environment variables (documented below).
+
+You can run tests individually from an IDE like IntelliJ IDEA.
+You can also run tests using `mvn test`
+(including [single tests](https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.html)).
 
 
 ### Using a local machine
@@ -106,7 +110,7 @@ Environment variables:
 
 ### Using visual testing
 
-Test class: `VisualSnapshopTest`
+Test class: `VisualSnapshotTest`
 
 Extra setup:
 
