@@ -27,12 +27,9 @@ public class VisualSnapshotTest {
 
     @BeforeEach
     public void setUpVisualAI() {
-        // Determine if Chrome should be headless
-        boolean headless = System.getenv().getOrDefault("HEADLESS", "false")
-                .equalsIgnoreCase("true");
 
         // Prepare Eyes and Ultrafast Grid for Selenium WebDriver
-        driver = new ChromeDriver(new ChromeOptions().setHeadless(headless));
+        driver = new ChromeDriver();
         runner = new VisualGridRunner(new RunnerOptions().testConcurrency(5));
         eyes = new Eyes(runner);
 
