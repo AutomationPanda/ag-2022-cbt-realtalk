@@ -49,6 +49,7 @@ Each test has unique setup needs and environment variables (documented below).
 You can run tests individually from an IDE like IntelliJ IDEA.
 You can also run tests using `mvn test`
 (including [single tests](https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.html)).
+Just remember to set the required environment variables first!
 
 
 ### 1. Using a local machine
@@ -64,7 +65,7 @@ Extra setup:
 Environment variables:
 
 * `BROWSER`: (optional) `chrome`, `edge`, `firefox`, or `safari`
-* `EDGE_DRIVER_PATH`: the absolute path to EdgeDriver
+* `EDGE_DRIVER_PATH`: (required for Edge) the absolute path to EdgeDriver
 
 
 ### 2. Using Selenium Grid
@@ -96,6 +97,7 @@ Extra setup:
 
 * You *must* have a LambdaTest account, which you can [register for free](https://accounts.lambdatest.com/register)
 * Test results will appear in the LambdaTest dashboard
+* Use LambdaTest's [capabilities generator](https://www.lambdatest.com/capabilities-generator/) for env variable values
 
 Environment variables:
 
