@@ -40,7 +40,7 @@ public class VisualSnapshotTest {
         config.setApiKey(System.getenv("APPLITOOLS_API_KEY"));
 
         // Create a new batch
-        config.setBatch(new BatchInfo("AG 2022: Real Talk on CBT"));
+        config.setBatch(new BatchInfo("4 Ways To Do Cross-Browser Testing in Java"));
 
         // Add browsers with different viewports
         config.addBrowser(800, 600, BrowserType.CHROME);
