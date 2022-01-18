@@ -40,7 +40,7 @@ public class CloudPlatformTest {
         capabilities.setCapability("version", version);
         capabilities.setCapability("platform", platform);
         capabilities.setCapability("resolution", resolution);
-        capabilities.setCapability("build", "AG 2022: Real Talk on CBT");
+        capabilities.setCapability("build", "4 Ways To Do Cross-Browser Testing in Java");
         capabilities.setCapability("name", "CloudPlatformTest");
         capabilities.setCapability("network", true); // To enable network logs
         capabilities.setCapability("visual", true); // To enable step by step screenshot
